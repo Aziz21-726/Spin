@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Spin THR Lebaran</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  body {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #6600FF;
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #FFE900;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#gacha-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #E900FF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#hadiah {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #E70707;
+}
+
+</style>
+<body>
+  <div class="container">
+    <h1>SPIN THR Lebaran</h1>
+    <button id="gacha-button">SPIN!</button>
+    <p id="hadiah"></p>
+    <h1>Kirim tanda bukti</h1>
+  </div>
+  <script src="jm.js"></script>
+</body>
+<script>
+const daftarHadiah = [
+  "Uang tunai Rp 5.000",
+  "Uang tunai Rp 20.000",
+  "Uang tunai Rp 30.000",
+  "Voucher belanja Rp 1000",
+  "Paket sembako dari pemerintah",
+  "Tiket mudik ke NERAKA!",
+  "Maaf, coba lagi ya!"
+];
+
+const gachaButton = document.getElementById("gacha-button");
+const hadiahElement = document.getElementById("hadiah");
+
+gachaButton.addEventListener("click", () => {
+  const hadiah = daftarHadiah[Math.floor(Math.random() * daftarHadiah.length)];
+  hadiahElement.textContent = "Selamat, Anda mendapatkan: " + hadiah;
+});
+
+</script>
+</html>
